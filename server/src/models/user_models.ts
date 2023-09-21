@@ -19,7 +19,11 @@ const UserSchema = new Schema(
       required: true,
     },
   },
-  { timestamps: true }
+  {
+    collection: 'User',
+    timestamps: true,
+    versionKey: false,
+  }
 );
 
 const User_Model = model<UserInterface>('User', UserSchema);
